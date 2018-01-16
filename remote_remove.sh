@@ -1,5 +1,7 @@
 #This script removes a given file or directory or it's contents on multiple machines
 #The script is based on an improved version of check_process_on_remote_machines.sh
+#I you want to delete contents of a directory you have to escape the '*' symbol for the script to work. For example: ./remote_remove.sh /foo/bar/\*
+#Tested on bash version 4.2.46(1)-release 
 
 #!/bin/bash
 
