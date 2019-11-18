@@ -1,2 +1,2 @@
 # super-duper-barnacle
-Application administration scripts
+Linux Sysadmin scripts
