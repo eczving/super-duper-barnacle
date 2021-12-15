@@ -1,4 +1,7 @@
 #!/bin/bash
+#
+#Tested on Debian 9
+#
 
 PRIVATE_IP=$(ip a | grep global | awk '{ print $2 }')
 MAC=$(ip a | grep ether | awk '{ print $2 }')
