@@ -11,7 +11,7 @@ PUBLIC=$(curl -s -L https://cpanel.net/myip)
 DNS=$(grep nameserver /etc/resolv.conf | awk '{print $2}')
 GEOLOC=$(curl -s ipinfo.io/$PUBLIC | grep -i city | awk '{print $2}')
 USERS=$(grep -i ssh /var/log/auth.log | grep Accepted | tail)
-PACKAGESIZE=$(dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n | tail -n 10 | awk '{sum+=$1}; END{print sum;}')
+PACKAGESIZE=$(dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n | awk '{sum+=$1}; END{print sum;}')
 
 ID=$(curl -s "http://metadata.google.internal/computeMetadata/v1/instance/id" -H "Metadata-Flavor: Google")
 SERVICE_ACCOUNTS=$(curl -s "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/" -H "Metadata-Flavor: Google")
